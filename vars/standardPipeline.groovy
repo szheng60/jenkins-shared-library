@@ -5,8 +5,9 @@ def call(Map config) {
 				checkout scm
 			}
 			stage ('Build') {
-				bat "echo 'building ${config.projectName}'"
+				bat "echo ${config.find('projectName')}"
 			}
+			/*
 			stage ('Test') {
 				parallel 'static': {
 					bat "echo 'run static tests'"
@@ -19,6 +20,7 @@ def call(Map config) {
 			stage ('Deploy') {
 				bat "echo 'deploying to server ${config.serverDomain}'"
 			}
+			*/
 		} catch (err) {
 			currentBuild.result = "FAILED"
 			throw err
