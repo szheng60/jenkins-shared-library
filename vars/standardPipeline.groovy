@@ -5,7 +5,7 @@ def call(Map config) {
 				checkout scm
 			}
 			stage ('Build') {
-				bat "echo ${config.find('projectName')}"
+				bat "echo ${config.projectName}"
 			}
 			/*
 			stage ('Test') {
