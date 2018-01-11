@@ -1,10 +1,10 @@
 def call(Map config) {
 	node {	
 		try {
-			stage('Clone') {
+			stage('\u2776 Clone') {
 				checkout scm
 			}
-			stage ('Build') {
+			stage ('\u2777 Build') {
 				bat "echo ${config.projectName}"
 			}
 			/*
