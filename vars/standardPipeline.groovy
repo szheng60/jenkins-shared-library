@@ -1,12 +1,11 @@
-def call(body) {
+def call(Map config) {
+	/*
 	def config = [:]
 	body.resolveStrategy = Closure.DELEGATE_FIRST
 	body.delegate = config
 	body()
-	
-	node {
-		deleteDir()
-		
+	*/
+	node {	
 		try {
 			stage('Clone') {
 				checkout scm
